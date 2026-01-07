@@ -43,6 +43,8 @@ int _printf(const char *format, ...)
 			/* Handle %% - Percent */
 			else if (format[i] == '%')
 				count += _putchar('%');
+			else if (format[i] == 'd' || format[i] == 'i')
+				count += print_number(va_arg(args, int));
 			/* Handle unknown specifiers */
 			else
 			{
